@@ -4,7 +4,7 @@
   command: |
     if [ -f "{{ .download.artifact_file }}" ]; then
       mkdir -p {{ .binary_dir }}
-      tar -zxvf {{ .artifact_file }} -C {{ .binary_dir }}
+      tar -zxvf {{ .download.artifact_file }} -C {{ .binary_dir }}
     fi
   when: .download.artifact_file | empty | not
 
